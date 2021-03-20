@@ -17,3 +17,7 @@ The application uses Java 11.
 [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=codepenguin-org_vehicle-restriction-testing-example&metric=security_rating)](https://sonarcloud.io/dashboard?id=codepenguin-org_vehicle-restriction-testing-example)
 [![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=codepenguin-org_vehicle-restriction-testing-example&metric=sqale_index)](https://sonarcloud.io/dashboard?id=codepenguin-org_vehicle-restriction-testing-example)
 [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=codepenguin-org_vehicle-restriction-testing-example&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=codepenguin-org_vehicle-restriction-testing-example)
+
+# SwaggerHub
+
+https://app.swaggerhub.com/apis-docs/codepenguin-org/vehicle-restriction-testing-example/0.0.1
