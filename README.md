@@ -21,3 +21,13 @@ The application uses Java 11.
 # SwaggerHub
 
 https://app.swaggerhub.com/apis-docs/codepenguin-org/vehicle-restriction-testing-example/0.0.1
+
+## OpenAPI v3
+
+### Document
+
+The Open API v3 document is located in the `/v3/api-docs/` path.
+
+### Swagger UI
+
+The Swagger UI is located in the `/swagger-ui.html` path.

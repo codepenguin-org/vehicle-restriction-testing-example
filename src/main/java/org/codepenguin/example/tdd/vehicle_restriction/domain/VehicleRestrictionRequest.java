@@ -22,46 +22,42 @@
  * SOFTWARE.
  */
 
-package org.codepenguin.example.tdd.vehicle_restriction.service;
+package org.codepenguin.example.tdd.vehicle_restriction.domain;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.codepenguin.example.tdd.vehicle_restriction.enums.City;
-import org.codepenguin.example.tdd.vehicle_restriction.service.factory.VehicleRestrictionEvaluatorFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
+import static lombok.AccessLevel.PRIVATE;
+
 /**
- * Service for vehicle restrictions.
+ * Request for vehicle restrictions.
  *
  * @author Jorge Garcia
  * @version 0.0.1
  * @since 11
  */
-@Service
-public class VehicleRestrictionService {
+@Data
+@NoArgsConstructor
+@AllArgsConstructor(access = PRIVATE)
+@Builder
+public final class VehicleRestrictionRequest implements Serializable {
 
-    private final VehicleRestrictionEvaluatorFactory factory;
+    private static final long serialVersionUID = 5468385106122384524L;
 
-    /**
-     * Constructor.
-     *
-     * @param factory the vehicle restrictions evaluator's factory.
-     */
-    @Autowired
-    public VehicleRestrictionService(VehicleRestrictionEvaluatorFactory factory) {
-        this.factory = factory;
-    }
+    @Schema(example = "ABC123", required = true, description = "Vehicle's license plate.")
+    private String plate;
 
-    /**
-     * Indicates if a vehicle can drive based on the city, its plate, and the datetime.
-     *
-     * @param city     the city.
-     * @param plate    the vehicle's plate.
-     * @param dateTime the datetime.
-     * @return {@code true} if the vehicle can drive; otherwise, {@code false}.
-     */
-    public boolean canDrive(final City city, final String plate, final LocalDateTime dateTime) {
-        return !factory.build(city).apply(plate, dateTime);
-    }
+    @Schema(example = "BOGOTA", required = true, description = "City where the vehicle wishes to travel.")
+    private City city;
+
+    @Schema(description = "Date and time when the vehicle wishes to transit. If this value is not settled, it'll use " +
+            "the current date and time.")
+    private LocalDateTime datetime;
 }
