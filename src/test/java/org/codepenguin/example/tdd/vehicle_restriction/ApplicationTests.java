@@ -24,29 +24,30 @@
 
 package org.codepenguin.example.tdd.vehicle_restriction;
 
-import org.codepenguin.example.tdd.vehicle_restriction.service.VehicleRestrictionService;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.SpringApplication;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.apache.commons.lang.math.NumberUtils.INTEGER_ONE;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.Mockito.mockStatic;
+import static org.mockito.Mockito.times;
 
 /**
- * Functional tests for {@link Application}.
+ * Unit tests for {@link Application}.
  *
  * @author Jorge Garcia
  * @version 0.0.1
  * @since 11
  */
-@SpringBootTest
 class ApplicationTests {
 
-    @Autowired
-    private VehicleRestrictionService service;
-
     @Test
-    void contextLoads() {
-        assertThat(service).isNotNull();
-    }
+    void givenNoParametersWhenMainThenDoNothing() {
+        try (var mockStatic = mockStatic(SpringApplication.class)) {
+            Application.main(new String[]{});
 
+            mockStatic.verify(times(INTEGER_ONE), () -> SpringApplication.run(eq(Application.class), any()));
+        }
+    }
 }
