@@ -4,6 +4,10 @@ Spring Boot application as example to learn how to apply unit testing with JUnit
 
 The application uses Java 11.
 
+## Github
+
+https://github.com/codepenguin-org/vehicle-restriction-testing-example
+
 ## SonarCloud
 
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=codepenguin-org_vehicle-restriction-testing-example&metric=bugs)](https://sonarcloud.io/dashboard?id=codepenguin-org_vehicle-restriction-testing-example)
@@ -18,16 +22,24 @@ The application uses Java 11.
 [![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=codepenguin-org_vehicle-restriction-testing-example&metric=sqale_index)](https://sonarcloud.io/dashboard?id=codepenguin-org_vehicle-restriction-testing-example)
 [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=codepenguin-org_vehicle-restriction-testing-example&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=codepenguin-org_vehicle-restriction-testing-example)
 
-# SwaggerHub
+## SwaggerHub
 
 https://app.swaggerhub.com/apis-docs/codepenguin-org/vehicle-restriction-testing-example/0.0.1
 
-## OpenAPI v3
+### OpenAPI v3
 
-### Document
+#### Document
 
 The Open API v3 document is located in the `/v3/api-docs/` path.
 
-### Swagger UI
+#### Swagger UI
 
 The Swagger UI is located in the `/swagger-ui.html` path.
+
+## Docker
+
+https://hub.docker.com/r/codepenguin/vehicle-restriction-testing-example
+
+```shell
+docker pull codepenguin/vehicle-restriction-testing-example
+```
